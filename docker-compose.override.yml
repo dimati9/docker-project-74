@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  app:
+    ports:
+      - "8080:8080"   # Проброс порта
+    command: make dev  # Переопределяем команду запуска
+    volumes:
+      - ./app:/app     # Монтирование для hot-reload
+    environment:
+      NODE_ENV: development
